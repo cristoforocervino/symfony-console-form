@@ -52,7 +52,9 @@ final class FormHelper extends Helper
             } else {
                 $form = $this->formFactory->createNamed($name, $formType, $input, $options);
             }
-            $form->setData($data);
+            if ($data !== null) {
+                $form->setData($data);
+            }
 
             // if we are rerunning the form for invalid data we don't need the fields that are already valid.
             foreach ($validFormFields as $validFormField) {
