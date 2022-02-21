@@ -45,7 +45,7 @@ class FormBasedInputDefinitionFactory implements InputDefinitionFactory
         $repeatedField = $form->getConfig()->getType()->getInnerType() instanceof RepeatedType;
         if (!$repeatedField && $form->getConfig()->getCompound()) {
             foreach ($form->all() as $childName => $field) {
-                $subName = $name === null ? $childName : $form->getName() . '[' . $childName . ']';
+                $subName = $name === null ? $childName : $name . '[' . $childName . ']';
                 $this->addFormToInputDefinition($inputDefinition, $field, $subName);
             }
         } else {

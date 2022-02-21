@@ -68,7 +68,7 @@ final class ConsoleFormWithDefaultValuesAndOptionsFactory implements ConsoleForm
                     $childBuilder,
                     $input,
                     $options,
-                    $name === null ? $childName : $formBuilder->getName() . '[' . $childName . ']'
+                    $name === null ? $childName : $name . '[' . $childName . ']'
                 );
             }
         } else {

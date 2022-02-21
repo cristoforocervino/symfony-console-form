@@ -50,7 +50,7 @@ final class NonInteractiveRootInteractor implements FormInteractor
         $isRepeatedField = $config->getType()->getInnerType() instanceof RepeatedType;
         if (!$isRepeatedField && $config->getCompound()) {
             foreach ($form->all() as $childName => $field) {
-                $subName = $name === null ? $childName : $form->getName() . '[' . $childName . ']';
+                $subName = $name === null ? $childName : $name . '[' . $childName . ']';
                 $this->fixInputForField($input, $field, $subName);
             }
         } else {

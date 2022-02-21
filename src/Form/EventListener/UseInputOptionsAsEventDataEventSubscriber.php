@@ -38,7 +38,7 @@ class UseInputOptionsAsEventDataEventSubscriber implements EventSubscriberInterf
                 if ($repeatedField) {
                     $submittedData = $this->convertInputToSubmittedData($input, $field, $name ?? $form->getName());
                 } else {
-                    $subName = $name === null ? $childName : $form->getName() . '[' . $childName . ']';
+                    $subName = $name === null ? $childName : $name . '[' . $childName . ']';
                     $submittedData[$childName] = $this->convertInputToSubmittedData($input, $field, $subName);
                 }
             }
